@@ -2,9 +2,12 @@ Bipolar disorder / Depression — Monoamine oxidase A (MAO-A) (CHEMBL1951)
 ============================================================
 MAO-A inhibitors raise monoamine levels (older antidepressant class).
 
+Updated: 2026-07-11T07:45:46+00:00
+Data source: cached
 Compounds: 40  (active: 13, inactive: 27)
 Train: 32  |  Test: 8
-ROC-AUC: 1.0000
+Test ROC-AUC: 1.0000
+CV ROC-AUC:   1.0000
 
               precision    recall  f1-score   support
 

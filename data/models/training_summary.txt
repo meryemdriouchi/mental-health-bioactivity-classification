@@ -1,11 +1,13 @@
-Mental Health Bioactivity Models — Training Summary
+Mental Health Bioactivity Models — Auto-Update Summary
 ============================================================
+Last run: 2026-07-11T07:45:46+00:00
 
-Alzheimer's / Dementia          AUC=1.000  compounds=47  (active=15)
-Depression                      SKIPPED
-Schizophrenia                   AUC=1.000  compounds=38  (active=12)
-Anxiety                         SKIPPED
-ADHD                            AUC=1.000  compounds=40  (active=13)
-Bipolar disorder / Depression   AUC=1.000  compounds=40  (active=13)
+Alzheimer's / Dementia          CV-AUC=0.971  compounds=47  new=0  [deployed]
+Depression                      unchanged (fresh)
+Schizophrenia                   CV-AUC=0.893  compounds=38  new=0  [deployed]
+Anxiety                         CV-AUC=1.000  compounds=39  new=0  [deployed]
+ADHD                            CV-AUC=1.000  compounds=40  new=0  [deployed]
+Bipolar disorder / Depression   CV-AUC=1.000  compounds=40  new=0  [deployed]
 
-Models saved in: /Users/a1234/Documents/dementia-bioactivity-classification/data/models
+Manifest: data/manifest.json
+History:  data/models/training_history.json

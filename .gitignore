@@ -11,6 +11,11 @@ data/models/*.joblib
 data/targets/
 data/ache_model.joblib
 data/ache_activities.csv
+data/logs/
+
+# Keep manifest and training history in git
+!data/manifest.json
+!data/models/training_history.json
 
 # OS / editor
 .DS_Store

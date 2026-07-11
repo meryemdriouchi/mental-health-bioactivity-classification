@@ -1,0 +1,83 @@
+{
+  "last_update": "2026-07-11T07:45:57+00:00",
+  "targets": {
+    "alzheimers_dementia": {
+      "condition": "Alzheimer's / Dementia",
+      "chembl_id": "CHEMBL220",
+      "data_source": "cached",
+      "compounds": 47,
+      "active": 15,
+      "inactive": 32,
+      "test_roc_auc": 1.0,
+      "cv_roc_auc": 0.9714,
+      "new_compounds_added": 0,
+      "model_path": "/Users/a1234/Documents/dementia-bioactivity-classification/data/models/alzheimers_dementia_model.joblib",
+      "cache_path": "/Users/a1234/Documents/dementia-bioactivity-classification/data/targets/alzheimers_dementia_activities.csv"
+    },
+    "schizophrenia": {
+      "condition": "Schizophrenia",
+      "chembl_id": "CHEMBL217",
+      "data_source": "cached",
+      "compounds": 38,
+      "active": 12,
+      "inactive": 26,
+      "test_roc_auc": 1.0,
+      "cv_roc_auc": 0.8933,
+      "new_compounds_added": 0,
+      "model_path": "/Users/a1234/Documents/dementia-bioactivity-classification/data/models/schizophrenia_model.joblib",
+      "cache_path": "/Users/a1234/Documents/dementia-bioactivity-classification/data/targets/schizophrenia_activities.csv"
+    },
+    "anxiety": {
+      "condition": "Anxiety",
+      "chembl_id": "CHEMBL209386",
+      "data_source": "cached",
+      "compounds": 39,
+      "active": 12,
+      "inactive": 27,
+      "test_roc_auc": 1.0,
+      "cv_roc_auc": 1.0,
+      "new_compounds_added": 0,
+      "model_path": "/Users/a1234/Documents/dementia-bioactivity-classification/data/models/anxiety_model.joblib",
+      "cache_path": "/Users/a1234/Documents/dementia-bioactivity-classification/data/targets/anxiety_activities.csv"
+    },
+    "adhd": {
+      "condition": "ADHD",
+      "chembl_id": "CHEMBL238",
+      "data_source": "cached",
+      "compounds": 40,
+      "active": 13,
+      "inactive": 27,
+      "test_roc_auc": 1.0,
+      "cv_roc_auc": 1.0,
+      "new_compounds_added": 0,
+      "model_path": "/Users/a1234/Documents/dementia-bioactivity-classification/data/models/adhd_model.joblib",
+      "cache_path": "/Users/a1234/Documents/dementia-bioactivity-classification/data/targets/adhd_activities.csv"
+    },
+    "bipolar_depression": {
+      "condition": "Bipolar disorder / Depression",
+      "chembl_id": "CHEMBL1951",
+      "data_source": "cached",
+      "compounds": 40,
+      "active": 13,
+      "inactive": 27,
+      "test_roc_auc": 1.0,
+      "cv_roc_auc": 1.0,
+      "new_compounds_added": 0,
+      "model_path": "/Users/a1234/Documents/dementia-bioactivity-classification/data/models/bipolar_depression_model.joblib",
+      "cache_path": "/Users/a1234/Documents/dementia-bioactivity-classification/data/targets/bipolar_depression_activities.csv"
+    },
+    "depression": {
+      "condition": "Depression",
+      "chembl_id": "CHEMBL2284",
+      "data_source": "sample",
+      "compounds": 38,
+      "active": 14,
+      "inactive": 24,
+      "test_roc_auc": 0.6,
+      "cv_roc_auc": 0.7733,
+      "new_compounds_added": 40,
+      "model_path": "/Users/a1234/Documents/dementia-bioactivity-classification/data/models/depression_model.joblib",
+      "cache_path": "/Users/a1234/Documents/dementia-bioactivity-classification/data/targets/depression_activities.csv"
+    }
+  }
+}

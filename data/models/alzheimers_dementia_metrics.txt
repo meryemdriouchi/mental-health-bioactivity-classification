@@ -2,9 +2,12 @@ Alzheimer's / Dementia — Acetylcholinesterase (AChE) (CHEMBL220)
 ============================================================
 Symptomatic cognitive decline; AChE inhibitors are standard care.
 
+Updated: 2026-07-11T07:45:39+00:00
+Data source: cached
 Compounds: 47  (active: 15, inactive: 32)
 Train: 37  |  Test: 10
-ROC-AUC: 1.0000
+Test ROC-AUC: 1.0000
+CV ROC-AUC:   0.9714
 
               precision    recall  f1-score   support
 

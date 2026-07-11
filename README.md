@@ -10,6 +10,34 @@ Molecule (SMILES)  →  6 target models  →  Activity profile across conditions
 
 ---
 
+## Auto-Update (Keeps Models Accurate)
+
+Models automatically refresh with **new ChEMBL lab data** every 7 days.
+
+```bash
+# Check when models were last updated
+python update_models.py --status
+
+# Download latest ChEMBL data + retrain now
+python update_models.py --force
+
+# Smart update (only if data is older than 7 days)
+python update_models.py
+
+# Install weekly auto-update (every Sunday 9 AM on macOS)
+./setup_auto_update.sh
+```
+
+**What auto-update does:**
+1. Downloads up to **10,000** fresh records per target (IC50, Ki, EC50)
+2. Detects **new compounds** added since last run
+3. Retrains with **500-tree Random Forest** + 5-fold cross-validation
+4. Only deploys new model if **CV-AUC does not drop** (quality guard)
+5. Saves history to `data/models/training_history.json`
+6. Saves status to `data/manifest.json`
+
+---
+
 ## Conditions Covered
 
 | Condition | Protein Target | Example Drugs | ChEMBL ID |
@@ -29,21 +57,19 @@ Each condition has its **own trained model**.
 
 ```
 dementia-bioactivity-classification/
+├── update_models.py               # Auto-update with fresh ChEMBL data  ← USE THIS
+├── setup_auto_update.sh           # Weekly schedule (macOS)
+├── model_updater.py               # Update pipeline logic
 ├── targets_config.py              # Condition → target mapping
 ├── mental_health_common.py        # Shared ML utilities
-├── train_mental_health_models.py  # Train all 6 models  ← START HERE
+├── train_mental_health_models.py  # One-time manual training
 ├── predict_mental_health.py       # Test molecules across all conditions
 ├── train_ache_classifier.py       # Original single-target script (legacy)
 ├── sample_data/                   # Offline training data per target
-│   ├── ache_sample.csv
-│   ├── sert_sample.csv
-│   ├── d2_sample.csv
-│   ├── gaba_sample.csv
-│   ├── dat_sample.csv
-│   └── maoa_sample.csv
 └── data/
-    ├── targets/                   # Cached ChEMBL data (after download)
-    └── models/                    # Trained models + metrics
+    ├── manifest.json              # Last update + accuracy per target
+    ├── targets/                   # Cached ChEMBL data
+    └── models/                    # Trained models + training history
 ```
 
 ---
@@ -54,11 +80,12 @@ dementia-bioactivity-classification/
 cd ~/Documents/dementia-bioactivity-classification
 pip install -r requirements.txt
 
-# Train all 6 models
-python train_mental_health_models.py
+# First time: download latest data + train all models
+python update_models.py --force
 
-# Predict across all conditions (demo: fluoxetine, donepezil, aspirin)
+# Predict across all conditions
 python predict_mental_health.py
+```
 
 # Test a specific known drug
 python predict_mental_health.py --drug fluoxetine
@@ -91,15 +118,15 @@ IC50 ≤ **1000 nM** (1 µM) → **active**
 
 ## Improve Accuracy
 
-The sample datasets are small (~40 compounds each). For better models:
+Always use the auto-updater with internet access:
 
 ```bash
-# Delete cached data and re-download from ChEMBL
-rm -rf data/targets/*.csv
-python train_mental_health_models.py
+python update_models.py --force
 ```
 
-Expect ROC-AUC around **0.75–0.90** with full ChEMBL data (vs misleading 100% on tiny samples).
+This pulls thousands of real ChEMBL compounds per target (not the ~40 sample molecules).
+
+Expect **CV ROC-AUC around 0.75–0.90** with full ChEMBL data.
 
 ---
 

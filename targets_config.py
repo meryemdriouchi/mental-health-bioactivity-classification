@@ -13,6 +13,13 @@ from pathlib import Path
 SAMPLE_DIR = Path(__file__).parent / "sample_data"
 DATA_DIR = Path(__file__).parent / "data" / "targets"
 MODELS_DIR = Path(__file__).parent / "data" / "models"
+MANIFEST_PATH = Path(__file__).parent / "data" / "manifest.json"
+HISTORY_PATH = Path(__file__).parent / "data" / "models" / "training_history.json"
+
+# Re-fetch ChEMBL data when cache is older than this many days
+REFRESH_INTERVAL_DAYS = 7
+MAX_CHEMBL_RECORDS = 10000
+ACTIVITY_TYPES = ("IC50", "Ki", "EC50")
 
 
 @dataclass(frozen=True)
