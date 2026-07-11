@@ -53,8 +53,8 @@ cat > "$PLIST_PATH" <<EOF
 </plist>
 EOF
 
-launchctl unload "$PLIST_PATH" 2>/dev/null || true
-launchctl load "$PLIST_PATH"
+launchctl bootout "gui/$(id -u)/${PLIST_NAME}" 2>/dev/null || launchctl unload "$PLIST_PATH" 2>/dev/null || true
+launchctl bootstrap "gui/$(id -u)" "$PLIST_PATH" 2>/dev/null || launchctl load "$PLIST_PATH"
 
 echo "Auto-update installed."
 echo "  Schedule: every Sunday at 9:00 AM"
