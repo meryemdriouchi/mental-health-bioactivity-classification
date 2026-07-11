@@ -2,9 +2,9 @@ Mental Health Bioactivity Models — Training Summary
 ============================================================
 
 Alzheimer's / Dementia          AUC=1.000  compounds=47  (active=15)
-Depression                      AUC=0.667  compounds=38  (active=14)
+Depression                      SKIPPED
 Schizophrenia                   AUC=1.000  compounds=38  (active=12)
-Anxiety                         AUC=1.000  compounds=39  (active=12)
+Anxiety                         SKIPPED
 ADHD                            AUC=1.000  compounds=40  (active=13)
 Bipolar disorder / Depression   AUC=1.000  compounds=40  (active=13)
 
