@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+ml-env/
+
+# Generated models and cached downloads (re-run scripts to recreate)
+data/models/*.joblib
+data/targets/
+data/ache_model.joblib
+data/ache_activities.csv
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

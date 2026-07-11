@@ -1,0 +1,22 @@
+Dementia Bioactivity Classifier — AChE (CHEMBL220)
+==================================================
+Active threshold: IC50 <= 1000.0 nM
+Compounds used: 47
+Train size: 37
+Test size: 10
+
+ROC-AUC: 1.0000
+
+Confusion matrix (rows=true, cols=predicted):
+              inactive  active
+  inactive           7       0
+  active             0       3
+
+              precision    recall  f1-score   support
+
+    inactive       1.00      1.00      1.00         7
+      active       1.00      1.00      1.00         3
+
+    accuracy                           1.00        10
+   macro avg       1.00      1.00      1.00        10
+weighted avg       1.00      1.00      1.00        10

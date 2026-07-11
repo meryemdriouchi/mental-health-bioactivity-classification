@@ -1,0 +1,16 @@
+Depression — Serotonin transporter (SERT) (CHEMBL2284)
+============================================================
+SSRIs block serotonin reuptake via SERT.
+
+Compounds: 38  (active: 14, inactive: 24)
+Train: 30  |  Test: 8
+ROC-AUC: 0.6667
+
+              precision    recall  f1-score   support
+
+    inactive       0.67      0.80      0.73         5
+      active       0.50      0.33      0.40         3
+
+    accuracy                           0.62         8
+   macro avg       0.58      0.57      0.56         8
+weighted avg       0.60      0.62      0.60         8
